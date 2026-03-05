@@ -1,10 +1,13 @@
 #include <stdio.h>
 #include <stdbool.h>
+#include <math.h>
+
+static double error = 0.0000001;
 
 bool equals(double *v1, double *v2, int n) {
     int i, cont = 1;
     for(i=0; i < n; i++) {
-        if (v1[i] != v2[i]) {
+        if (fabs(v1[i] - v2[i]) > error) {
             return false;
         }
     }
