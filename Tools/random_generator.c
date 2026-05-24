@@ -24,18 +24,12 @@ double random(){
 }
 
 int rangen(int range_min, int range_max){
-    struct tm* ptr;
-    time_t t;
-    t = time(NULL);
-    ptr = localtime(&t);
-    
-    initial_valeu = (double)(((double)(ptr->tm_sec)) / 59);
     
     int final_value;
     
     do{
         initial_valeu = random();
-        final_value = (int)(initial_valeu * range_max);
+        final_value = (int)((initial_valeu+ (range_max/(range_max*15))) * range_max);
     }while(final_value < range_min);
     
     return final_value;
@@ -44,8 +38,16 @@ int rangen(int range_min, int range_max){
 
 int main()
 {
+    struct tm* ptr;
+    time_t t;
+    t = time(NULL);
+    ptr = localtime(&t);
     
-    printf("%d",rangen(3,100));
+    initial_valeu = (double)(((double)(ptr->tm_sec)) / 120);
+    
+    for(int i = 0; i < 100; i++){
+        printf("%d\n",rangen(1,1000));
+    }
 
     return 0;
 }
