@@ -29,7 +29,12 @@ int rangen(int range_min, int range_max){
     
     do{
         initial_valeu = random();
-        final_value = (int)((initial_valeu+ (range_max/(range_max*15))) * range_max);
+        if(initial_valeu > 0.99){
+            final_value = range_max;
+        }else{
+            final_value = (int)((initial_valeu) * range_max);
+        }
+        
     }while(final_value < range_min);
     
     return final_value;
