@@ -29,11 +29,8 @@ int rangen(int range_min, int range_max){
     
     do{
         initial_valeu = random();
-        if(initial_valeu > 0.99){
-            final_value = range_max;
-        }else{
-            final_value = (int)((initial_valeu) * range_max);
-        }
+       
+        final_value = (int)((initial_valeu) * ((double)(range_max)) + 0.9);
         
     }while(final_value < range_min);
     
@@ -51,7 +48,7 @@ int main()
     initial_valeu = (double)(((double)(ptr->tm_sec)) / 120);
     
     for(int i = 0; i < 100; i++){
-        printf("%d\n",rangen(1,1000));
+        printf("%d\n",rangen(1,6));
     }
 
     return 0;
