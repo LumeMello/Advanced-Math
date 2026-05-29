@@ -39,7 +39,6 @@ graph create_graph(){
 
 void bellman_ford(graph *g, int start, int edge_weight_path[]){
     int visited[VERTEX_COUNT];
-    int smalest = INFINITY;
     
     for(int i =0; i < VERTEX_COUNT; i++){
         if(i==start){
