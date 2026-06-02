@@ -24,7 +24,7 @@ int Fibo_Din_Tabulation(int respostas[], int n){
             respostas[i] = 0;
         }else if( i == 1){
             respostas[i] = 1;
-        }else{
+        }else if( respostas[i] == 0){
             respostas[i] = respostas[i-1] + respostas[i-2];
         }
     }
