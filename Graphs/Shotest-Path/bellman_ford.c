@@ -31,7 +31,7 @@ graph create_graph(){
     graph g;
     for(int i = 0; i < VERTEX_COUNT; i++){
         printf("Adjacence list for vertex %d\n", i);
-        printf("For no connection type 9999\n", i);
+        printf("For no connection type 9999\n");
         g.vertex_list[i] = create_vertex(i);
     }
     return g;
